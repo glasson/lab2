@@ -1,7 +1,7 @@
 '''9. Напишите программу, которая запрашивает у пользователя числа до
 тех пор, пока каждое следующее число больше предыдущего. В конце
 программа сообщает, сколько чисел было введено.'''
-def first_check_type(mas):
+def in_put(mas):
     while True:
         print("значение: ", end="")
         try:
@@ -9,30 +9,15 @@ def first_check_type(mas):
         except ValueError:
             print("Неверный тип данных")
             continue
-        mas.append(input_value)
-        counter = 1
-        break
-    return mas,counter
-
-def other_check_type(mas,counter):
-    while True:
-        print("значение: ", end="")
-        try:
-            input_value = float(input())
-        except ValueError:
-            print("Неверный тип данных")
-            continue
-        if input_value > mas[-1]:
+        if (len(mas)==0) or (input_value > mas[-1]):
             mas.append(input_value)
-            counter += 1
         else:
             break
-    return mas,counter
+    return mas,len(mas)
 
 def create_l() -> float:
     mas = []
-    mas,counter=first_check_type(mas)
-    mas,counter=other_check_type(mas,counter)
+    mas,counter=in_put(mas)
     print(mas)
     return counter
 
