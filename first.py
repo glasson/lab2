@@ -13,21 +13,19 @@ def in_put(mas):
             mas.append(input_value)
         else:
             break
-    return mas,len(mas)
+    return (mas,len(mas))
 
-def create_l() -> float:
+def create_mas() -> float:
     mas = []
     mas,counter=in_put(mas)
-    print(mas)
-    return counter
-
+    return (mas,counter)
 
 def show_counter(f):
-    print(f"Введено чисел: {f}")
+    print(f"Введено чисел: {f[0]} , \n массив: {f[1]}")
 
 
 def main():
-    show_counter(create_l())
+    show_counter(create_mas())
 
 
 if __name__ == "__main__":
