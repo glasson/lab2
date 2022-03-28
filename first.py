@@ -1,7 +1,8 @@
 '''9. Напишите программу, которая запрашивает у пользователя числа до
 тех пор, пока каждое следующее число больше предыдущего. В конце
 программа сообщает, сколько чисел было введено.'''
-def in_put(mas):
+def in_put():
+    mas=[]
     while True:
         print("значение: ", end="")
         try:
@@ -13,16 +14,14 @@ def in_put(mas):
             mas.append(input_value)
         else:
             break
-    return (mas,len(mas))
+    return mas
 
 def create_mas() -> float:
-    mas = []
-    mas,counter=in_put(mas)
-    return (mas,counter)
+    mas=in_put()
+    return mas
 
 def show_counter(f):
-    print(f"Введено чисел: {f[0]} , \n массив: {f[1]}")
-
+    print(f"Введено чисел: {len(f)} , массив: {f}")
 
 def main():
     show_counter(create_mas())
